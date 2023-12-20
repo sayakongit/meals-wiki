@@ -2,7 +2,7 @@
   <div class="flex flex-col p-8 justify-center">
     <input
       type="text"
-      class="rounded border-2 border-gray-200 w-full"
+      class="rounded border-2 border-gray-200 w-full outline-none border-transparent focus:border-transparent transition-all"
       placeholder="Search for meals"
     />
 
@@ -18,13 +18,14 @@
   </div>
 </template>
 <script setup>
-import { computed, onMounted } from "vue";
+import { computed, onMounted, ref } from "vue";
 import store from "../store";
 import axiosClient from "../axiosClient";
 
 const meals = computed(() => store.state.meals);
 
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+const mealsArr = ref();
 
 onMounted(async () => {
   const res = await axiosClient.get("/list.php?i=list");
