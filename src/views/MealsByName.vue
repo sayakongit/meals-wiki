@@ -31,7 +31,7 @@
             >YouTube</a
           >
           <router-link
-            to="/"
+            :to="{ name: 'mealDetails', params: { id: meal.idMeal } }"
             class="px-3 py-2 text-xs rounded border-2 hover:bg-gray-100 transition-all"
           >
             View
@@ -43,7 +43,6 @@
 </template>
 <script setup>
 import { computed, onMounted, ref } from "vue";
-import axiosClient from "../axiosClient";
 import store from "../store";
 import { useRoute } from "vue-router";
 
