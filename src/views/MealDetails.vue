@@ -1,12 +1,12 @@
 <template>
   <div
-    class="max-w-[1200px] mt-10 mx-auto flex md:flex-row flex-cols gap-10 px-8"
+    class="max-w-[1200px] mt-10 mx-auto flex flex-col md:flex-row gap-5 md:gap-10 px-4 md:px-8"
   >
-    <div class="w-[50%]">
+    <div class="md:w-[50%]">
       <img :src="meal.strMealThumb" :alt="meal.strMeal" class="" />
     </div>
 
-    <div class="w-[50%]">
+    <div class="md:w-[50%]">
       <h1 class="text-4xl font-semibold mb-5">{{ meal.strMeal }}</h1>
       <div class="">
         <div>
